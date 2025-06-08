@@ -1,0 +1,71 @@
+@startuml Rashguard Designer
+
+' Main Components
+class App {
+  + designElements: Array
+  + currentView: String
+  + colorFront: String
+  + size: String
+  + material: String
+  + quantity: Number
+  + saveDesign()
+  + loadSavedProjects()
+  + restoreProject()
+  + deleteProject()
+}
+
+class DesignCanvas {
+  + width: Number
+  + height: Number
+  + elements: Array
+  + backgroundSvg: String
+  + render()
+  + handleElementSelect()
+  + startDrag()
+  + endDrag()
+}
+
+class DesignElement {
+  + type: String
+  + x: Number
+  + y: Number
+  + width: Number
+  + height: Number
+  + rotation: Number
+  + scale: Number
+}
+
+class TextElement extends DesignElement {
+  + text: String
+  + fontSize: Number
+  + fontFamily: String
+  + color: String
+  + bold: Boolean
+  + italic: Boolean
+  + underline: Boolean
+  + textAlign: String
+}
+
+class ImageElement extends DesignElement {
+  + src: String
+}
+
+' Relationships
+App "1" *-- "many" DesignCanvas : contains
+DesignCanvas "1" *-- "many" DesignElement : contains
+DesignElement <|-- TextElement
+DesignElement <|-- ImageElement
+
+' Notes
+note right of App
+  Main application component
+  managing state and user interactions
+end note
+
+note right of DesignCanvas
+  Canvas component for
+  rendering and manipulating
+  design elements
+end note
+
+@enduml 

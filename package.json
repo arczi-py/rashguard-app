@@ -1,0 +1,30 @@
+{
+  "name": "rashguard-designer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "generate-diagrams": "node scripts/generate-diagrams.js",
+    "server": "node src/server/index.js"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.1.0",
+    "twemoji": "^14.0.2",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.5",
+    "@vitejs/plugin-vue": "^5.2.2",
+    "plantuml-encoder": "^1.4.0",
+    "tailwindcss": "^4.1.5",
+    "vite": "^6.3.1"
+  }
+}
